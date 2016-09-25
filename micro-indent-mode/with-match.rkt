@@ -44,10 +44,10 @@
 
 (define (parse-line s c col)
   (match s
-    [(cons #\( r)
-     (parse-line r (ctx c col '()) (add1 col))]
     [(or (cons #\newline _) '())
      (parse-indent s c)]
+    [(cons #\( r)
+     (parse-line r (ctx c col '()) (add1 col))]
     [(cons #\) r)
      (match-let ([(ctx parent _ left) c])
        (parse-line r (ctx-push parent (reverse left)) (add1 col)))]

@@ -1,6 +1,6 @@
 #lang racket
 
-(require "lib.rkt"
+(require "with-lexer.rkt"
          rackunit)
 
 (check-equal?

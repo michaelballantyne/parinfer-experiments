@@ -2,7 +2,7 @@
 
 (module main racket
   (require racket/gui/base
-           "lib.rkt")
+           "with-lexer.rkt")
 
   (define km (new keymap%))
   (send km map-function "d:c" "copy-clipboard")
