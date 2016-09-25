@@ -1,10 +1,10 @@
 #lang racket
 
-(provide parenify)
+(provide parinfer)
 
 (struct ctx (parent column left) #:transparent)
 
-(define (parenify str)
+(define (parinfer str)
   (reverse
    (ctx-left
     (parse-line (string->list str)

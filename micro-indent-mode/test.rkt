@@ -5,69 +5,69 @@
 
 (check-equal?
  '((a) b)
- (parenify "
+ (parinfer "
 (a
 b
 "))
 
 (check-equal?
  '((a b))
- (parenify "
+ (parinfer "
 (a
  b
 "))
 
 (check-equal?
  '((a b))
- (parenify "
+ (parinfer "
 (a
  b
 "))
 
 (check-equal?
  '((a b))
- (parenify "
+ (parinfer "
 (a
  b
 "))
 
 (check-equal?
  '((a (b) c))
- (parenify "
+ (parinfer "
 (a (b
  c
 "))
 
 (check-equal?
  '((a (b) c))
- (parenify "
+ (parinfer "
 (a (b
  c
 "))
 
 (check-equal?
  '((a (b) c))
- (parenify "
+ (parinfer "
 (a (b
    c
 "))
 
 (check-equal?
  '((a (b c)))
- (parenify "
+ (parinfer "
 (a (b
     c
 "))
 
 (check-equal?
  '((a (b) c))
- (parenify "
+ (parinfer "
 (a (b
    c"))
 
 (check-equal?
  '((a (b) c))
- (parenify "
+ (parinfer "
 (a (b
    c)"))
 
@@ -78,7 +78,7 @@ b
         s)
        (else
         (cons (car l) (append (cdr l) s))))))
- (parenify "
+ (parinfer "
 (define (append l s
   (cond
     ((null? l
